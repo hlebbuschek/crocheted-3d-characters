@@ -1,0 +1,76 @@
+body { 
+  margin: 0;
+  color: rgb(28, 56, 88);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+canvas { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+ }
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* bottom: 0; */
+  height: 100%;
+  min-width: 230px;
+  max-width: 35%;
+  z-index: 100;
+}
+.sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(238, 239, 252);
+  overflow-y: scroll;
+}
+button {
+  color: rgb(28, 56, 88);
+  background-color: rgb(240, 240, 240);
+  border: 1px rgb(119, 119, 119) solid;
+  border-radius: 20px;
+  margin: 1px 10px;
+  padding: 3px 7px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(220, 220, 220);
+}
+input {
+  height: 10px;
+}
+.inp-txt {
+  min-width: 20%;
+  max-width: 50%;
+}
+.inp-clr {
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  cursor: pointer;
+}
+.inp-nmb {
+  width: 30px;
+}
+ul {
+  padding: 0 20px;
+}
+.box {
+  display: block;
+  min-width: 220px;
+}
+.emodji-btn {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 2px;
+}
+.label {
+  font: caption;
+}

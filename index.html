@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>3d</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+			{
+				"imports": {
+					"three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+          "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+        }
+			}
+		</script>
+  </head>
+  <body>
+    <!-- 3d-modell (soll nicht scrollbar sein) -->
+    <canvas></canvas> 
+    <section class="sidebar-container">
+      <div class="sidebar">
+        <!-- verschieden formen von objekten als 3d-modellen darstellen und dazugehörige beschreibung erstellen -->
+        <div class="sec-add-new-obj">
+          <div class="obj-desc">
+            <a class="label">kugel</a>
+            <div class="box" id="1-box">
+              <ul>
+                <li>
+                  <span>name:</span>
+                  <input class="inp-txt" id="1-name" type="text">
+                </li>
+                <li>
+                  <span>breite von</span>
+                  <input class="inp-nmb" type="number" id="1-initialStitches">
+                  <span>bis</span>
+                  <input class="inp-nmb" type="number" id="1-stitchCountMax">
+                </li>
+                <li>
+                  <span>farbe</span>
+                  <input class="inp-clr" type="color" id="1-color">
+                </li>
+                <li>
+                  <span>position</span>
+                  <input class="inp-nmb" type="number" id="1-x" placeholder="x">
+                  <input class="inp-nmb" type="number" id="1-y" placeholder="y">
+                  <input class="inp-nmb" type="number" id="1-z" placeholder="z">
+                </li>
+              </ul>
+              <button class="create emodji-btn" title="erstellen" id="1-obj">☑️</button>
+            </div>  
+          </div>
+          <div class="obj-desc" id="tube">
+            <a class="label">rohr</a>
+            <div class="box" id="2-box">
+              <ul>
+                <li>
+                  <span>name:</span>
+                  <input class="inp-txt" id="2-name" type="text">
+                </li>
+                <li>
+                  <span>breite von</span>
+                  <input class="inp-nmb" type="number" id="2-initialStitches">
+                  <span>bis</span>
+                  <input class="inp-nmb" type="number" id="2-stitchCountMax">
+                </li>
+                <li>
+                  <span>lang</span>
+                  <input class="inp-nmb" type="number" id="2-rowsCount">
+                </li>
+                <li>
+                  <span>farbe</span>
+                  <input class="inp-clr" type="color" id="2-color">
+                </li>
+                <li>
+                  <span>position</span>
+                  <input class="inp-nmb" type="number" id="2-x" placeholder="x">
+                  <input class="inp-nmb" type="number" id="2-y" placeholder="y">
+                  <input class="inp-nmb" type="number" id="2-z" placeholder="z">
+                </li>
+              </ul>
+              <button class="create emodji-btn" title="erstellen" id="2-obj">☑️</button>
+            </div>
+          </div>
+          <!-- <div class="obj-desc" id="org-obj">
+            <a class="label">meins</a>
+            <div class="box" id="3-box">
+              <ul>
+                <li>
+                  <span>name:</span>
+                  <input class="inp-txt" type="text" id="3-name">
+                </li>
+                <li>
+                  <span>breite von</span>
+                  <input class="inp-nmb" type="number" id="3-initialStitches">
+                  <span>bis</span>
+                  <input class="inp-nmb" type="number" id="3-stitchCountMax">
+                </li>
+                <li>
+                  <button class="add-row emodji-btn">➕</button>
+                  <span>row</span>
+                </li>
+                <li>
+                  <button class="add-increase emodji-btn">➕</button>
+                  <span>zunahme</span>
+                </li>
+                <li>
+                  <button class="add-decrease emodji-btn">➕</button>
+                  <span>abnahme</span>
+                </li>
+                <li>
+                  <span>farbe</span>
+                  <input class="inp-clr" type="color" id="3-color">
+                </li>
+                <li>
+                  <span>position</span>
+                  <input class="inp-nmb" type="number" id="3-x" placeholder="x">
+                  <input class="inp-nmb" type="number" id="3-y" placeholder="y">
+                  <input class="inp-nmb" type="number" id="3-z" placeholder="z">
+                </li>
+              </ul>
+              <button class="create emodji-btn" title="erstellen" id="3-obj">☑️</button>
+            </div>
+          </div> -->
+        </div>
+        <!-- beschreibung zur jede 3d-modell -->
+        <div class="sec-objs-descriptions">
+          <!-- <div class="obj-desc" id="desc-1">
+            <a class="label">label-obj</a>
+            <button class="change emodji-btn" id="desc-1" title="ändern">🔁</button>
+            <button class="delete emodji-btn" id="desc-1" title="löschen">❌</button>
+            <div class="box" id="1">
+              <div class="row" id="row-0">
+                <ul>
+                  <li>
+                    <span class="row-index">0.</span>
+                    <span class="mesh-num">6,</span>
+                    <span class="desc">in kreis</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <button class="save-as-txt" title="beschreibung herunterladen">herunterladen⬇️</button>
+
+      </div>
+    </section>
+    <script type="module" src="script/creating.js"></script>
+    <script type="module" src="script/sidebar.js"></script>
+    <script type="module" src="script/objects.js"></script>
+  </body>
+</html>
