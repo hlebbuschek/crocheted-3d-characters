@@ -81,9 +81,9 @@ document.querySelectorAll('.create')
       const id = parseInt(btn.id.toString().slice(0, 1));
       const name = document.getElementById(`${id}-name`).value;
       const color = document.getElementById(`${id}-color`).value;
-      const x = parseInt(document.getElementById(`${id}-x`).value);
-      const y = parseInt(document.getElementById(`${id}-y`).value);
-      const z = parseInt(document.getElementById(`${id}-z`).value);
+      const x = parseInt(document.getElementById(`${id}-x`).value || 0);
+      const y = parseInt(document.getElementById(`${id}-y`).value || 0);
+      const z = parseInt(document.getElementById(`${id}-z`).value || 0);
       const position = {x, y, z};
       const initialStitches = parseInt(document.getElementById(`${id}-initialStitches`).value);
       const stitchCountMax = parseInt(document.getElementById(`${id}-stitchCountMax`).value);
@@ -97,7 +97,7 @@ document.querySelectorAll('.create')
         rows.push(i);
       }
       // lange erreichen: kugel - lange === initialStitches; tube - lange defined
-      const counter = rows.length;
+      const counter = stitchCountMax / initialStitches + 2;
       // console.log(counter)
       switch (id) {
         case 1:
@@ -121,7 +121,6 @@ document.querySelectorAll('.create')
         rows.push(i);
       }
 
-      // const obj = {name, color, position, rows};
       const obj = new Modell(name, position, rows, color);
       modells.push(obj);
       localStorage.setItem('modells', JSON.stringify(modells));
@@ -178,7 +177,7 @@ function updateSidebar() {
 document.querySelector('.save-as-txt')
   .addEventListener('click', () => {
     exportTextFromList();
-    saveCanvasAsImage();
+    // saveCanvasAsImage();
   });
 
 function exportTextFromList() {
@@ -207,12 +206,12 @@ function exportTextFromList() {
   link.click();
 }
 
-function saveCanvasAsImage(format = 'png') {
-  const canvas = document.querySelector('canvas');
-  const dataURL = canvas.toDataURL(`image/${format}`);
+// function saveCanvasAsImage(format = 'png') {
+//   const canvas = document.querySelector('canvas');
+//   const dataURL = canvas.toDataURL(`image/${format}`);
   
-  const link = document.createElement('a');
-  link.href = dataURL;
-  link.download = `3d-modell.${format}`;
-  link.click();
-}
+//   const link = document.createElement('a');
+//   link.href = dataURL;
+//   link.download = `3d-modell.${format}`;
+//   link.click();
+// }
